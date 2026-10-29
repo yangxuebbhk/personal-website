@@ -1,0 +1,81 @@
+:root {
+  --navy: #0b1c33;
+  --navy-deep: #071322;
+  --gold: #c4a35a;
+  --gold-soft: #e6d3a3;
+  --ink: #1c2430;
+  --muted: #5c6774;
+  --paper: #f6f3ee;
+  --line: rgba(196, 163, 90, 0.35);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Noto Sans SC", "Source Sans 3", sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.serif {
+  font-family: "Cormorant Garamond", "Noto Serif SC", Georgia, serif;
+}
+
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.section-kicker {
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-size: 0.72rem;
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover::after,
+.nav-link[aria-current="page"]::after {
+  width: 100%;
+}
+
+.card-line {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.portrait-frame {
+  box-shadow: 0 24px 60px rgba(7, 19, 34, 0.28);
+  border: 1px solid var(--gold);
+  object-fit: cover;
+  object-position: 16% center;
+}
+
+.hero-panel {
+  background:
+    linear-gradient(180deg, rgba(7, 19, 34, 0.08), transparent 28%),
+    radial-gradient(1200px 420px at 80% -10%, rgba(196, 163, 90, 0.12), transparent 50%),
+    var(--navy-deep);
+}
+
+@media (max-width: 767px) {
+  .mobile-nav[data-open="false"] {
+    display: none;
+  }
+}
